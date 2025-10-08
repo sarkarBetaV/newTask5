@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
-import Login from './components/Login';
-import Register from './components/Register';
-import Dashboard from './components/Dashboard';
-import VerificationSuccess from './pages/VerificationSuccess';
-import VerificationFailed from './pages/VerificationFailed';
+import { AuthProvider } from './context/AuthContext.js';
+import Login from './components/Login.js';
+import Register from './components/Register.js';
+import Dashboard from './components/Dashboard.js';
+import VerificationSuccess from './pages/VerificationSuccess.js';
+import VerificationFailed from './pages/VerificationFailed.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
