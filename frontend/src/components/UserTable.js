@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Table, Form, Button, ButtonGroup, Alert, Tooltip, OverlayTrigger } from 'react-bootstrap';
-import { authService } from '../services/authService';
+import { authService } from '../services/authService.js';
 
 const UserTable = ({ users, onUsersUpdate }) => {
   const [selectedUsers, setSelectedUsers] = useState(new Set());
