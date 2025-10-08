@@ -1,4 +1,5 @@
-const API_URL = process.env.REACT_APP_API_URL || 'https://user-management-backend-r5e9.onrender.com/api';
+
+const API_URL = process.env.REACT_APP_API_URL || 'https://user-management-backend-r5e9.onrender.com/api/auth';
 
 export const authService = {
   login: async (email, password) => {
