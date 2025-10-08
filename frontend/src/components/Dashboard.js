@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import UserTable from './UserTable.js';
 import { AuthContext } from '../context/AuthContext.js';
-import authService from '../services/authService.js';
+import { authService } from '../services/authService.js';
 
 const Dashboard = () => {
   const [users, setUsers] = useState([]);
