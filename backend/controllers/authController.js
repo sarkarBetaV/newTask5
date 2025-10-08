@@ -23,16 +23,25 @@ export const register = async (req, res) => {
       emailVerificationToken
     });
 
-    sendVerificationEmail(user);
+    // ✅ FIX: Wait for email to send and handle the result
+    const emailResult = await sendVerificationEmail(user);
+
+    if (!emailResult.success) {
+      console.error('❌ Failed to send verification email:', emailResult.error);
+      // User is still registered, but email failed
+      // You might want to log this for admin review
+    }
 
     res.status(201).json({ 
       message: 'Registration successful. Please check your email for verification.',
-      userId: user.id 
+      userId: user.id,
+      emailSent: emailResult.success // Optional: include this for debugging
     });
   } catch (error) {
     if (error.name === 'SequelizeUniqueConstraintError') {
       return res.status(400).json({ error: 'Email already exists' });
     }
+    console.error('Registration error:', error);
     res.status(500).json({ error: 'Registration failed' });
   }
 };
